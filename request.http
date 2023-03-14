@@ -14,3 +14,19 @@ GET http://localhost:9000/api/animes HTTP/1.1
 
 ###
 GET http://localhost:9000/api/animes/64027465ed1551335f83b97b HTTP/1.1
+
+
+###
+PUT http://localhost:9000/api/animes/64027465ed1551335f83b97b HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Naruto Shippuden",
+    "writer": "Masashi Kishimoto",
+    "year": 1999,
+    "synopsis": "Naruto es una serie de manga escrita e ilustrada por Masashi Kishimoto. La obra narra la historia de un ninja adolescente llamado Naruto Uzumaki, quien aspira a convertirse en Hokage, líder de su aldea, con el propósito de ser reconocido como alguien importante dentro de la aldea y entre sus compañeros."
+}
+
+###
+DELETE http://localhost:9000/api/animes/640fd8407aa3b2cb62497016 HTTP/1.1
+

@@ -34,7 +34,7 @@ router.put("/animes/:id", (req, res) => {
     const { id } = req.params;
     const { title, writer, year, synopsis } = req.body;
     animeSchema
-        .updateOne(id)
+        .updateOne({_id: id}, {$set: {title, writer, year, synopsis}})
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
@@ -43,7 +43,7 @@ router.put("/animes/:id", (req, res) => {
 router.delete("/animes/:id", (req, res) => {
     const { id } = req.params;
     animeSchema
-        .remove(id)
+        .remove({_id: id})
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
